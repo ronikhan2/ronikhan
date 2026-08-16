@@ -482,7 +482,30 @@
     .scholar-banner p { color: var(--muted); font-size: .78rem; margin-top: 3px; }
 
     /* ---------- Collaboration ---------- */
-    .collab-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 25px; }
+    .collaboration-layout { display: grid; gap: 18px; }
+    .lab-card {
+      display: grid;
+      grid-template-columns: 1.05fr .95fr;
+      gap: 24px;
+      align-items: stretch;
+      background: linear-gradient(135deg, var(--ink), #16336b);
+      color: #fff;
+      border-radius: 20px;
+      padding: 28px;
+      box-shadow: 0 18px 45px rgba(11,23,54,.13);
+    }
+    .lab-card .eyebrow { color: #93b7ff; margin-bottom: 8px; }
+    .lab-card .eyebrow::before { background: #93b7ff; }
+    .lab-card h2 { font-size: 1.45rem; line-height: 1.25; }
+    .lab-card p { color: #c9d5e7; font-size: .8rem; line-height: 1.68; margin-top: 9px; max-width: 650px; }
+    .lab-link { display: inline-flex; margin-top: 16px; padding: 9px 12px; border: 1px solid rgba(255,255,255,.18); border-radius: 9px; color: #fff; font-size: .74rem; font-weight: 850; }
+    .lab-link:hover { background: var(--blue); border-color: var(--blue); }
+    .lab-meta { display: grid; gap: 10px; }
+    .lab-meta div { background: rgba(255,255,255,.08); border: 1px solid rgba(255,255,255,.10); border-radius: 12px; padding: 13px 14px; }
+    .lab-meta small { display: block; color: #9fb5d4; font-size: .64rem; text-transform: uppercase; letter-spacing: .08em; font-weight: 850; }
+    .lab-meta strong { display: block; color: #fff; font-size: .82rem; margin-top: 4px; line-height: 1.4; }
+
+    .collab-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
     .collab-column h2 { font-size: 1.12rem; margin-bottom: 14px; }
     .person {
       background: #fff;
@@ -498,29 +521,26 @@
     .person h3 { margin-top: 6px; font-size: 1rem; position: relative; }
     .person .inst { color: var(--muted); font-size: .77rem; line-height: 1.55; margin-top: 5px; position: relative; }
     .work-box { margin-top: 14px; border-left: 3px solid var(--blue); background: #f7f9fd; border-radius: 0 10px 10px 0; padding: 12px 13px; color: #526078; font-size: .76rem; line-height: 1.52; position: relative; }
-    .person a { display: inline-block; color: var(--blue); font-size: .75rem; font-weight: 850; margin-top: 12px; position: relative; }
-    .team-panel {
-      background: linear-gradient(145deg, var(--ink), #152a53);
-      color: #fff;
+    .work-list { margin: 7px 0 0 16px; color: #526078; }
+    .work-list li { margin: 5px 0; line-height: 1.45; }
+    .person-links { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 12px; position: relative; }
+    .person-links a { display: inline-block; color: var(--blue); font-size: .75rem; font-weight: 850; margin-top: 0; }
+
+    .team-section {
+      background: #fff;
+      border: 1px solid var(--line);
       border-radius: 18px;
-      padding: 26px;
-      min-height: 260px;
+      padding: 23px;
     }
-    .team-panel h3 { font-size: 1.1rem; }
-    .team-panel p { color: #c2cee0; font-size: .8rem; line-height: 1.65; margin-top: 9px; }
-    .team-tags { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 16px; }
-    .team-tag { padding: 7px 9px; border: 1px solid rgba(255,255,255,.15); border-radius: 8px; color: #dbe4f2; font-size: .7rem; }
-    .team-note { margin-top: 18px; padding-top: 14px; border-top: 1px solid rgba(255,255,255,.12); color: #9fb0ca; font-size: .72rem; line-height: 1.55; }
-    .collab-ethics {
-      margin-top: 14px;
-      padding: 14px 16px;
-      border-radius: 13px;
-      background: #fff9eb;
-      border: 1px solid #f2e2b7;
-      color: #725719;
-      font-size: .75rem;
-      line-height: 1.55;
-    }
+    .team-section-head { display: flex; justify-content: space-between; align-items: end; gap: 20px; margin-bottom: 15px; }
+    .team-section-head h2 { font-size: 1.12rem; }
+    .team-section-head p { color: var(--muted); font-size: .75rem; line-height: 1.5; max-width: 510px; text-align: right; }
+    .team-grid { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 11px; }
+    .team-member { background: #f8faff; border: 1px solid #e6ebf4; border-radius: 14px; padding: 16px; min-height: 142px; display: flex; flex-direction: column; }
+    .team-avatar { width: 36px; height: 36px; border-radius: 11px; display: grid; place-items: center; background: var(--sky); color: var(--blue); font-size: .72rem; font-weight: 900; margin-bottom: 11px; }
+    .team-member h3 { font-size: .82rem; line-height: 1.35; }
+    .team-member span { color: var(--muted); font-size: .68rem; margin-top: 4px; }
+    .team-member a { color: var(--blue); font-size: .68rem; font-weight: 800; margin-top: auto; padding-top: 10px; overflow-wrap: anywhere; }
 
     /* ---------- Skills ---------- */
     .skills-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 13px; }
@@ -624,6 +644,7 @@
       .home-grid { gap: 45px; }
       .portrait-card img { height: 420px; }
       .skills-grid { grid-template-columns: repeat(2, 1fr); }
+      .team-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
     }
 
     @media (max-width: 860px) {
@@ -646,7 +667,7 @@
       }
       .nav.open { display: flex; }
       .nav-btn { width: 100%; text-align: left; padding: 11px 12px; }
-      .home-grid, .news-grid, .about-grid, .research-grid, .collab-grid, .contact-card { grid-template-columns: 1fr; }
+      .home-grid, .news-grid, .about-grid, .research-grid, .collab-grid, .lab-card, .contact-card { grid-template-columns: 1fr; }
       .home-grid { padding: 35px 0 78px; text-align: center; }
       .portrait-zone { order: -1; }
       .portrait-card { width: 270px; transform: none; }
@@ -688,7 +709,14 @@
     @media (prefers-reduced-motion: reduce) {
       *, *::before, *::after { animation-duration: .001ms !important; transition-duration: .001ms !important; }
     }
-  </style>
+  
+    @media (max-width: 650px) {
+      .team-grid { grid-template-columns: 1fr; }
+      .team-section-head { align-items: flex-start; flex-direction: column; }
+      .team-section-head p { text-align: left; }
+    }
+
+</style>
 </head>
 
 <body>
@@ -715,7 +743,7 @@
         <li><button class="nav-btn" data-section="contact">Contact</button></li>
       </ul>
 
-      <a class="cv-mini" href="assets/docs/Roni_Khan_CV.pdf" download="Roni_Khan_CV.pdf">↓ Download CV</a>
+      <a class="cv-mini" href="./assets/docs/Roni_Khan_CV.pdf" download="Roni_Khan_CV.pdf">↓ Download CV</a>
     </div>
   </header>
 
@@ -736,11 +764,11 @@
             <button class="btn secondary" data-go="publications">Publications</button>
             <a class="btn secondary" href="https://scholar.google.com/citations?hl=en&user=N1mPrLwAAAAJ" target="_blank" rel="noopener">Google Scholar</a>
             <a class="btn secondary" href="https://www.linkedin.com/in/roni-khan-5478352a8" target="_blank" rel="noopener">LinkedIn</a>
-            <a class="btn dark" href="assets/docs/Roni_Khan_CV.pdf" download="Roni_Khan_CV.pdf">↓ Download CV</a>
+            <a class="btn dark" href="./assets/docs/Roni_Khan_CV.pdf" download="Roni_Khan_CV.pdf">↓ Download CV</a>
           </div>
 
           <article class="home-news" data-go="news" aria-label="Open latest news">
-            <img src="assets/images/spiscon-2026.jpg" alt="SPISCON 2026 conference at BAUET" />
+            <img src="./assets/images/spiscon-2026.jpg" alt="SPISCON 2026 conference at BAUET" />
             <div class="home-news-copy">
               <span>Latest update · August 2026</span>
               <h3>Presented two research works at SPISCON 2026</h3>
@@ -753,8 +781,7 @@
         <div class="portrait-zone">
           <div class="portrait-halo"></div>
           <div class="portrait-card">
-            <img src="assets/images/profile.jpg" alt="Portrait of MD. Roni Khan" />
-            <div class="portrait-badge"><strong>Research focus</strong>AI · Biomedical Imaging · QML</div>
+            <img src="./assets/images/profile.jpg" alt="Portrait of MD. Roni Khan" />
           </div>
         </div>
       </div>
@@ -773,7 +800,7 @@
           <div class="news-grid">
             <article class="feature-story">
               <div class="media">
-                <img src="assets/images/spiscon-2026.jpg" alt="Group photograph at SPISCON 2026 hosted by BAUET" />
+                <img src="./assets/images/spiscon-2026.jpg" alt="Group photograph at SPISCON 2026 hosted by BAUET" />
                 <span class="photo-tag">Conference · Presentation</span>
               </div>
               <div class="feature-body">
@@ -969,49 +996,103 @@
           <div class="page-title">
             <div class="eyebrow">Academic network</div>
             <h1>Research collaboration & team</h1>
-            <p>This section presents supervisors, collaborators and research-team relationships connected to my academic work.</p>
+            <p>Research relationships developed through supervision, laboratory collaboration, co-authored publications and ongoing team-based projects.</p>
           </div>
 
-          <div class="collab-grid">
-            <div class="collab-column">
-              <h2>Research collaborators</h2>
-              <article class="person">
-                <div class="person-role">Thesis supervisor</div>
-                <h3>Dr. A.T.M. Saiful Islam</h3>
-                <div class="inst">Associate Professor<br />Department of Electrical and Electronic Engineering<br />Gopalganj Science and Technology University</div>
-                <div class="work-box"><strong>Worked together on:</strong><br />FarmChat: LLM-RAG-Powered Framework for Real-Time Tomato Leaf Disease Detection and Farmer Assistance</div>
-                <a href="mailto:saifulslm6@gmail.com">saifulslm6@gmail.com →</a>
-              </article>
+          <div class="collaboration-layout">
+            <article class="lab-card">
+              <div>
+                <div class="eyebrow">Laboratory collaboration</div>
+                <h2>Biomedical & Circuit Simulation Lab (BMCS LAB)</h2>
+                <p>I have collaborated with BMCS LAB through research activities and co-authored conference publications. The laboratory works across biomedical engineering, simulation and computational research.</p>
+                <a class="lab-link" href="https://www.bmcslab.com/" target="_blank" rel="noopener">Visit BMCS LAB →</a>
+              </div>
+              <div class="lab-meta">
+                <div><small>Collaborator</small><strong>Safia Aktar Dipa</strong></div>
+                <div><small>Role</small><strong>Lecturer, Department of EEE · Researcher & Founder, BMCS LAB</strong></div>
+                <div><small>Contact</small><strong>dipa.eee@gstu.edu.bd</strong></div>
+              </div>
+            </article>
 
-              <!--
-                To add another collaborator, copy the article below and replace the details.
+            <div class="collab-grid">
+              <div class="collab-column">
+                <h2>Research collaborators</h2>
+
+                <article class="person">
+                  <div class="person-role">Thesis supervisor</div>
+                  <h3>Dr. A.T.M. Saiful Islam</h3>
+                  <div class="inst">Associate Professor<br />Department of Electrical and Electronic Engineering<br />Gopalganj Science and Technology University</div>
+                  <div class="work-box"><strong>Worked together on:</strong><br />FarmChat: LLM-RAG-Powered Framework for Real-Time Tomato Leaf Disease Detection and Farmer Assistance</div>
+                  <div class="person-links"><a href="mailto:saifulslm6@gmail.com">saifulslm6@gmail.com →</a></div>
+                </article>
+              </div>
+
+              <div class="collab-column">
+                <h2>BMCS LAB collaboration</h2>
 
                 <article class="person">
                   <div class="person-role">Research collaborator</div>
-                  <h3>Full Name</h3>
-                  <div class="inst">Designation<br>Department / Institution</div>
-                  <div class="work-box"><strong>Worked together on:</strong><br>Project or publication title</div>
-                  <a href="mailto:email@example.com">email@example.com →</a>
+                  <h3>Safia Aktar Dipa</h3>
+                  <div class="inst">Lecturer, Department of Electrical and Electronic Engineering<br />Gopalganj Science and Technology University<br />Researcher & Founder, BMCS LAB</div>
+                  <div class="work-box">
+                    <strong>Verified co-authored conference publications:</strong>
+                    <ol class="work-list">
+                      <li>Deep Learning-Driven Brain Tumor Sectionalisation: Leveraging YOLO11 for MRI Analysis — QPAIN 2025.</li>
+                      <li>Assessing Two-Stage and Set-Based Detectors for Cervical Cytology — IEEE BECITHCON 2025.</li>
+                      <li>Breast Cancer Histology Image Classification using Transfer Learning and Grad-CAM-Based Explainability — IEEE QPAIN 2026.</li>
+                    </ol>
+                  </div>
+                  <div class="person-links">
+                    <a href="mailto:dipa.eee@gstu.edu.bd">dipa.eee@gstu.edu.bd →</a>
+                    <a href="https://www.bmcslab.com/" target="_blank" rel="noopener">BMCS LAB →</a>
+                  </div>
                 </article>
-              -->
+              </div>
             </div>
 
-            <div class="collab-column">
-              <h2>Research team</h2>
-              <div class="team-panel">
-                <h3>FarmChat & interdisciplinary AI team profile</h3>
-                <p>I use this area to introduce people who contribute directly to ongoing research projects, including their research interests, responsibilities and professional contact links.</p>
-                <div class="team-tags">
-                  <span class="team-tag">Computer Vision</span>
-                  <span class="team-tag">LLM & RAG</span>
-                  <span class="team-tag">Explainable AI</span>
-                  <span class="team-tag">Precision Agriculture</span>
-                </div>
-                <div class="team-note">Individual member cards can be added here once you provide each person's name, role, institution, research interests, public email and photo.</div>
+            <section class="team-section" aria-labelledby="team-heading">
+              <div class="team-section-head">
+                <h2 id="team-heading">Research team</h2>
+                <p>Current team contacts for research communication and collaborative project work.</p>
               </div>
 
-              <div class="collab-ethics"><strong>Public-profile note:</strong> collaborator photographs and contact details should be added only when the person is comfortable having them displayed publicly.</div>
-            </div>
+              <div class="team-grid">
+                <article class="team-member">
+                  <div class="team-avatar">TR</div>
+                  <h3>Tushar Ranjon Das Robin</h3>
+                  <span>Research Team Member</span>
+                  <a href="mailto:tusharranjondasrobin@gmail.com">tusharranjondasrobin@gmail.com</a>
+                </article>
+
+                <article class="team-member">
+                  <div class="team-avatar">AE</div>
+                  <h3>A.K.M. Emtiaz</h3>
+                  <span>Research Team Member</span>
+                  <a href="mailto:emtiaz.22eee034@gstu.edu.bd">emtiaz.22eee034@gstu.edu.bd</a>
+                </article>
+
+                <article class="team-member">
+                  <div class="team-avatar">AA</div>
+                  <h3>Asim Mondal Avi</h3>
+                  <span>Research Team Member</span>
+                  <a href="mailto:asimmondalavibsmrstu@gmail.com">asimmondalavibsmrstu@gmail.com</a>
+                </article>
+
+                <article class="team-member">
+                  <div class="team-avatar">PS</div>
+                  <h3>Promit Sikder</h3>
+                  <span>Research Team Member</span>
+                  <a href="mailto:promitsikder@gmail.com">promitsikder@gmail.com</a>
+                </article>
+
+                <article class="team-member">
+                  <div class="team-avatar">LN</div>
+                  <h3>Lamyeea Nirjhor</h3>
+                  <span>Research Team Member</span>
+                  <a href="mailto:nirjhor1301@gmail.com">nirjhor1301@gmail.com</a>
+                </article>
+              </div>
+            </section>
           </div>
         </div>
       </div>
@@ -1058,8 +1139,8 @@
                 <a href="mailto:roni.19eee132@gstu.edu.bd">Email</a>
                 <a href="https://www.linkedin.com/in/roni-khan-5478352a8" target="_blank" rel="noopener">LinkedIn</a>
                 <a href="https://scholar.google.com/citations?hl=en&user=N1mPrLwAAAAJ" target="_blank" rel="noopener">Google Scholar</a>
-                <a href="assets/docs/Roni_Khan_CV.pdf" target="_blank" rel="noopener">View CV</a>
-                <a href="assets/docs/Roni_Khan_CV.pdf" download="Roni_Khan_CV.pdf">Download CV</a>
+                <a href="./assets/docs/Roni_Khan_CV.pdf" target="_blank" rel="noopener">View CV</a>
+                <a href="./assets/docs/Roni_Khan_CV.pdf" download="Roni_Khan_CV.pdf">Download CV</a>
               </div>
             </div>
             <div class="contact-visual" aria-hidden="true">
