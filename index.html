@@ -14,7 +14,7 @@
   <meta property="og:title" content="MD. Roni Khan | Academic & Research Portfolio" />
   <meta
     property="og:description"
-    content="EEE Graduate · AI Researcher · Biomedical Imaging"
+    content="EEE Graduate · AI Researcher"
   />
   <meta
     property="og:image"
@@ -67,6 +67,11 @@
     .container {
       width: min(1180px, 92%);
       margin: auto;
+    }
+
+    /* Keep the desktop header content vertically centered */
+    header > .container {
+      height: 100%;
     }
 
     header {
@@ -842,6 +847,10 @@
       }
 
       header {
+        height: auto;
+      }
+
+      header > .container {
         height: auto;
       }
 
